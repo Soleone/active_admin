@@ -40,12 +40,12 @@ module ActiveAdmin
         @param_name     = options.delete(:param_name)
         @download_links = options.delete(:download_links)
 
-        unless collection.respond_to?(:num_pages)
-          raise(StandardError, "Collection is not a paginated scope. Set collection.page(params[:page]).per(10) before calling :paginated_collection.")
-        end
+        # unless collection.respond_to?(:num_pages)
+        #   raise(StandardError, "Collection is not a paginated scope. Set collection.page(params[:page]).per(10) before calling :paginated_collection.")
+        # end
 
         @contents = div(:class => "paginated_collection_contents")
-        build_pagination_with_formats(options)
+        #build_pagination_with_formats(options)
         @built = true
       end
 

@@ -267,10 +267,11 @@ module ActiveAdmin
       end
 
       def apply_pagination(chain)
-        page_method_name = Kaminari.config.page_method_name
-        page = params[Kaminari.config.param_name]
+        # page_method_name = Kaminari.config.page_method_name
+        # page = params[Kaminari.config.param_name]
 
-        chain.send(page_method_name, page).per(per_page)
+        # chain.send(page_method_name, page).per(per_page)
+        chain.limit(max_per_page)
       end
 
       def per_page
@@ -285,7 +286,7 @@ module ActiveAdmin
       end
 
       def max_per_page
-        10_000
+        20
       end
 
       def apply_decorator(chain)
